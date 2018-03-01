@@ -23,12 +23,13 @@ app.use((req,res,next)=>{
 	next();
 });
 
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+
 
 /*app.use((req,res,next)=>{
 	res.render('maintenance.hbs');
 });*/
 app.use(express.static( __dirname + '/public'));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 hbs.registerHelper('getCurrentYear',()=>{
 	return new Date().getFullYear()
 });
