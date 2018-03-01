@@ -1,5 +1,6 @@
 const express = require('express');
 const hbs = require('hbs');
+var favicon = require('serve-favicon')
 const fs = require('fs');
 const port = process.env.PORT || 3000;
 var app = express();
@@ -21,6 +22,8 @@ app.use((req,res,next)=>{
 	});
 	next();
 });
+
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 /*app.use((req,res,next)=>{
 	res.render('maintenance.hbs');
